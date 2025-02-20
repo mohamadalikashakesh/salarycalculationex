@@ -41,4 +41,16 @@ calender = {
 }
 print("\n".join("{}\t{}".format(k, v) for k, v in calender.items()))
 month_number = input(print("Please Enter month number to calculate Salary: "))
-print(calender.get(month_number))
+#print(calender.get(month_number))  #Printing the Value For Testing
+salary = float(input(print(name + " Please Enter Your Salary: ")))
+#print(salary) #Printing the Dictionary For Testing
+
+title_perc = {}
+while True:
+    key = input("Enter Title to pay from Salary (or type 'exit' to stop): ")
+    if key.lower() == "exit":
+        break
+    value = input("Enter Percentage: ")
+    
+    title_perc[key] = value
+#print(title_perc) #Printing the Dictionary For Testing
