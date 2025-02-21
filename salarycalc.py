@@ -63,7 +63,19 @@ salary = float(input(name + " Please Enter Your Salary for month " + calender.ge
 #print(calender.get(month_number))
 print("*************************")
 
-title_perc = {}
+fixed_expenses = {
+    "Savings" : "0",
+    "Rent" : "0",
+    "Electricity" : "0"
+}
+for key in fixed_expenses:
+    user_input = input(f"Enter a Percentage value to deduct from Salary for '{key}': ")
+    value = int(user_input)
+    fixed_expenses[key] = value
+print("Total Allocations Percentage for fixed expenses are: ", fixed_expenses)
+
+
+title_perc = fixed_expenses
 while True:
     key = input("Enter Title to pay from Salary (or type 'exit' to stop): ")
     if key.lower() == "exit":
@@ -88,15 +100,8 @@ print("Remaining From Salary: $",remaining)
 
 #Rent and electricity Yearly Expenses
 print("*************************")
-rent_value=0
-electricity_value=0
-for key in result:
-    if key == "rent":
-        rent_value= result['rent']
-        print("Rent Value Per Year: $",rent_value*12)
-    if key == "electricity":
-        electricity_value= result['electricity']
-        print("Electricity Value Per Year: $",electricity_value*12)
+print("Rent Value Per Year: $",result['Rent']*12)
+print("Electricity Value Per Year: $",result['Electricity']*12)
 print("*************************")
 #Salary to the power 2
 salary_square = salary*salary
