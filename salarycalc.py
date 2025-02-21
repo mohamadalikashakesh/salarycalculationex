@@ -59,7 +59,7 @@ calender = {
 print("\n".join("{}\t{}".format(k, v) for k, v in calender.items()))
 print("*************************")
 month_number = input("Please Enter month number to calculate Salary: ")
-salary = float(input(name + " Please Enter Your Salary for month " + calender.get(month_number) + ":"))
+salary = float(input(name + " Please Enter Your Salary for month " + calender.get(month_number) + ": "))
 #print(calender.get(month_number))
 print("*************************")
 
@@ -97,4 +97,8 @@ for key in result:
     if key == "electricity":
         electricity_value= result['electricity']
         print("Electricity Value Per Year: $",electricity_value*12)
+print("*************************")
+#Salary to the power 2
+salary_square = salary*salary
+print("Your Salary to the power 2 is : $" , salary_square)
 print("*************************")
