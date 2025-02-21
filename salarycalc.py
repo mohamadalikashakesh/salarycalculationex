@@ -40,6 +40,7 @@ def total_allocations(data):
 
 name = str(input("Please Enter your Name:"))
 print("Welcome "+name)
+print("*************************")
 calender = {
     "1" : "January",
     "2" : "February",
@@ -55,9 +56,11 @@ calender = {
     "12" : "December",
 }
 print("\n".join("{}\t{}".format(k, v) for k, v in calender.items()))
+print("*************************")
 month_number = input("Please Enter month number to calculate Salary: ")
 #print(calender.get(month_number))  #Printing the Value For Testing
 salary = float(input(name + " Please Enter Your Salary: "))
+print("*************************")
 
 title_perc = {}
 while True:
@@ -69,8 +72,15 @@ while True:
     title_perc[key] = value
 #print(title_perc) #Printing the Dictionary For Testing
 
+print("*************************")
 result = calculate_allocations(title_perc, salary)
 print("Detailed Allocations are : ",result)
 
+print("*************************")
 total_sum = total_allocations(result)
 print("Total Allocations = $",total_sum)
+
+#Remaining From Salary Calculation
+print("*************************")
+remaining = salary - total_sum
+print("Remaining From Salary: $",remaining)
