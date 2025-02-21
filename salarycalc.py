@@ -32,6 +32,12 @@ def calculate_allocations(data, number):
         newvalues[key] = float(newvalues[key]) * number /100
     return newvalues
 
+def total_allocations(data):
+    total = 0
+    for value in data.values():
+        total += value
+    return total
+
 name = str(input("Please Enter your Name:"))
 print("Welcome "+name)
 calender = {
@@ -64,4 +70,7 @@ while True:
 #print(title_perc) #Printing the Dictionary For Testing
 
 result = calculate_allocations(title_perc, salary)
-print(result)
+print("Detailed Allocations are : ",result)
+
+total_sum = total_allocations(result)
+print("Total Allocations = $",total_sum)
