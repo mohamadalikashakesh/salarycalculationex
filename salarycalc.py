@@ -32,12 +32,13 @@ def calculate_allocations(data, number):
         newvalues[key] = float(newvalues[key]) * number /100
     return newvalues
 
+#This function returns the total value of allocations
 def total_allocations(data):
     total = 0
     for value in data.values():
         total += value
     return total
-
+    
 name = str(input("Please Enter your Name:"))
 print("Welcome "+name)
 print("*************************")
@@ -58,8 +59,8 @@ calender = {
 print("\n".join("{}\t{}".format(k, v) for k, v in calender.items()))
 print("*************************")
 month_number = input("Please Enter month number to calculate Salary: ")
-#print(calender.get(month_number))  #Printing the Value For Testing
-salary = float(input(name + " Please Enter Your Salary: "))
+salary = float(input(name + " Please Enter Your Salary for month " + calender.get(month_number) + ":"))
+#print(calender.get(month_number))
 print("*************************")
 
 title_perc = {}
@@ -84,3 +85,16 @@ print("Total Allocations = $",total_sum)
 print("*************************")
 remaining = salary - total_sum
 print("Remaining From Salary: $",remaining)
+
+#Rent and electricity Yearly Expenses
+print("*************************")
+rent_value=0
+electricity_value=0
+for key in result:
+    if key == "rent":
+        rent_value= result['rent']
+        print("Rent Value Per Year: $",rent_value*12)
+    if key == "electricity":
+        electricity_value= result['electricity']
+        print("Electricity Value Per Year: $",electricity_value*12)
+print("*************************")
