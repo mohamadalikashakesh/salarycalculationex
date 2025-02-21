@@ -23,7 +23,16 @@ The script should calculate and display:
 Finally, the script should output all the results in a readable format.
 """
 
-name = str(input(print("Please Enter your Name:")))
+#This function calculates the percentage of the given title according to salary
+def calculate_allocations(data, number):
+    newvalues = {}
+    for key, value in data.items():
+        newvalues[key] = value
+    for key in newvalues:
+        newvalues[key] = float(newvalues[key]) * number /100
+    return newvalues
+
+name = str(input("Please Enter your Name:"))
 print("Welcome "+name)
 calender = {
     "1" : "January",
@@ -40,10 +49,9 @@ calender = {
     "12" : "December",
 }
 print("\n".join("{}\t{}".format(k, v) for k, v in calender.items()))
-month_number = input(print("Please Enter month number to calculate Salary: "))
+month_number = input("Please Enter month number to calculate Salary: ")
 #print(calender.get(month_number))  #Printing the Value For Testing
-salary = float(input(print(name + " Please Enter Your Salary: ")))
-#print(salary) #Printing the Dictionary For Testing
+salary = float(input(name + " Please Enter Your Salary: "))
 
 title_perc = {}
 while True:
@@ -54,3 +62,6 @@ while True:
     
     title_perc[key] = value
 #print(title_perc) #Printing the Dictionary For Testing
+
+result = calculate_allocations(title_perc, salary)
+print(result)
