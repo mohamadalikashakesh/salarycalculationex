@@ -1,15 +1,3 @@
-"""
-
-• The total amount Nabiha spends on savings, rent, and electricity combined.
-
-• The monthly rent and electricity multiplied by 12 to estimate Nabiha's yearly rent and electricity costs.
-• Nabiha's total salary for the month raised to the power of 2 (just for fun).
-• Assume Nabiha saves an additional random amount (e.g., $50) each month, 
-    and you need to calculate how much would be left if this amount is divided by the total amount allocated to savings. 
-
-Finally, the script should output all the results in a readable format.
-"""
-
 #This function calculates the percentage of the given title according to salary
 def calculate_allocations(data, number):
     newvalues = {}
@@ -98,4 +86,42 @@ print("*************************")
 #Salary to the power 2
 salary_square = salary*salary
 print("Your Salary to the power 2 is : $" , salary_square)
+print("*************************")
+
+#Extra Savings
+old_savings = {
+    "1" : 0,
+    "2" : 0,
+    "3" : 0,
+    "4" : 0,
+    "5" : 0,
+    "6" : 0,
+    "7" : 0,
+    "8" : 0,
+    "9" : 0,
+    "10" : 0,
+    "11" : 0,
+    "12" : 0,
+}
+#Logic Error in loop to be fixed
+for key in old_savings:
+    old_savings[month_number] = result_fixed['Savings']
+#print(old_savings)
+answer = input("Do you have any extra Savings ?(Press y to add n to exit)")
+if answer == 'y':
+    extra_savings = int(input("Please Enter Amount: "))
+    for key, value in old_savings.items():
+        if value != 0:
+            add_value = int(extra_savings)
+            old_savings[key] += add_value
+            print("*************************")
+            print(f"Total Saving for Month '{key}' is $",value+add_value)
+            print("*************************")
+            #print(old_savings)
+        else:
+            break    
+else:
+    print("No Savings !")
+
+print("Remaining from Salary= $",remaining-extra_savings)
 print("*************************")
