@@ -1,20 +1,7 @@
 """
-Nabiha, a software engineering consultant, receives a variable salary every month.
-She wants to create a Python script that helps her manage her monthly finances by calculating
-how much money will be allocated to different categories like savings, rent, and electricity, 
-based on percentages of his salary.
 
-Your task is to write a Python script that automates these calculations. The script should:
-
-• Ask Nabiha to input her salary for the month.
-• Ask Nabiha to input the name of the month she is storing the salary for.
-• Ask Nabiha to input the following percentages for: a) Savings b) Rent c) Electricity
-
-The script should calculate and display:
-
-• The amount allocated to savings, rent, and electricity.
 • The total amount Nabiha spends on savings, rent, and electricity combined.
-• The remainder of Nabiha’s salary after these expenses.
+
 • The monthly rent and electricity multiplied by 12 to estimate Nabiha's yearly rent and electricity costs.
 • Nabiha's total salary for the month raised to the power of 2 (just for fun).
 • Assume Nabiha saves an additional random amount (e.g., $50) each month, 
@@ -72,8 +59,13 @@ for key in fixed_expenses:
     user_input = input(f"Enter a Percentage value to deduct from Salary for '{key}': ")
     value = int(user_input)
     fixed_expenses[key] = value
+print("*************************")
 print("Total Allocations Percentage for fixed expenses are: ", fixed_expenses)
 
+print("*************************")
+result_fixed = calculate_allocations(fixed_expenses, salary)
+print("Detailed Allocations for fixed expenses are : ",result_fixed)
+print("*************************")
 
 title_perc = fixed_expenses
 while True:
