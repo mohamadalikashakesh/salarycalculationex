@@ -103,25 +103,21 @@ old_savings = {
     "11" : 0,
     "12" : 0,
 }
-#Logic Error in loop to be fixed
+
+extra_savings = 0
 for key in old_savings:
     old_savings[month_number] = result_fixed['Savings']
 #print(old_savings)
 answer = input("Do you have any extra Savings ?(Press y to add n to exit)")
 if answer == 'y':
     extra_savings = int(input("Please Enter Amount: "))
-    for key, value in old_savings.items():
-        if value != 0:
-            add_value = int(extra_savings)
-            old_savings[key] += add_value
-            print("*************************")
-            print(f"Total Saving for Month '{key}' is $",value+add_value)
-            print("*************************")
-            #print(old_savings)
-        else:
-            break    
+    old_savings = {key: value + extra_savings if value > 0 else value for key, value in old_savings.items()}
+    #print(old_savings)
 else:
     print("No Savings !")
 
+print(f"Total Saving for Month {calender.get(month_number)} is $ {old_savings[month_number]}")
+#print(f"Total Saving for Month {calender.get(month_number)} is $ {int(value in old_savings.items()) +extra_savings}")
+print("*************************")
 print("Remaining from Salary= $",remaining-extra_savings)
 print("*************************")
